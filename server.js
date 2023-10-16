@@ -21,7 +21,7 @@ io.on("connection", (socket) => {
     });
 
     socket.on("callUser", (data) => { // lắng nghe sự kiện gọi người khác và thực hiện callback
-        io.to(data.userToCall).emit("callUser", {signal: data.signalData, from: data.from, name: data.name}); // gửi sự kiện đến phòng data.userToCall kèm theo dữ liệu
+        io.to(data.userToCall).emit("callUser", {signal: data.signalData, from: data.from, name: data.name}); // gửi sự kiện đến phòng data.userToCall kèm theo dữ liệu (tạo cuộc gọi giữa người dùng)
     });
 
     socket.on("answerCall", (data) => { // chấp nhận cuộc gọi
