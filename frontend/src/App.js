@@ -8,8 +8,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import { useEffect, useRef, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Peer from 'simple-peer';
-import io from 'socket.io-client';
-import { TextareaAutosize } from '@mui/material';
+import io from 'socket.io-client';	
 
 const socket = io.connect("http://localhost:5000");
 
@@ -54,6 +53,8 @@ function App() {
 	}, [])
 
 	const callUser = (id) => {
+		console.log(id);
+		
 		const peer = new Peer({
 			initiator: true,
 			trickle: false,
